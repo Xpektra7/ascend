@@ -44,10 +44,18 @@ export default function Location() {
           Ikoyi, Lagos — easily accessible by air, road, and rail.
         </p>
 
-        <div className="w-full aspect-3/2 md:aspect-4/1 bg-zinc-800/50 mb-20 flex items-center justify-center">
-          <span className="text-muted-foreground text-sm uppercase tracking-wider">
-            map placeholder
-          </span>
+        <div className="w-full aspect-3/2 md:aspect-4/1 mb-20 overflow-hidden relative">
+          <div className="absolute inset-0 bg-zinc-800/50 flex items-center justify-center">
+            <span className="text-muted-foreground text-sm uppercase tracking-wider">
+              map placeholder
+            </span>
+          </div>
+          <iframe
+            title="Venue location map"
+            src="https://www.openstreetmap.org/export/embed.html?bbox=3.4167%2C6.4500%2C3.4667%2C6.4700&layer=mapnik&marker=6.4600%2C3.4417"
+            className="w-full h-full relative z-10"
+            loading="lazy"
+          />
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">

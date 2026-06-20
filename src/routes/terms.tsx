@@ -2,7 +2,19 @@ import { createFileRoute } from "@tanstack/react-router";
 import Footer from "#/components/footer";
 import { termsSections } from "#/data/privacy";
 
-export const Route = createFileRoute("/terms")({ component: Terms });
+export const Route = createFileRoute("/terms")({
+  head: () => ({
+    meta: [
+      { title: "Terms of Service — Ascend 2026" },
+      {
+        name: "description",
+        content:
+          "Ascend 2026 terms of service — registration, code of conduct, liability, and event policies.",
+      },
+    ],
+  }),
+  component: Terms,
+});
 
 function Terms() {
   return (

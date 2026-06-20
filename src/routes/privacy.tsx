@@ -2,7 +2,19 @@ import { createFileRoute } from "@tanstack/react-router";
 import Footer from "#/components/footer";
 import { privacySections } from "#/data/privacy";
 
-export const Route = createFileRoute("/privacy")({ component: Privacy });
+export const Route = createFileRoute("/privacy")({
+  head: () => ({
+    meta: [
+      { title: "Privacy Policy — Ascend 2026" },
+      {
+        name: "description",
+        content:
+          "Ascend 2026 privacy policy — how we collect, use, and protect your personal information.",
+      },
+    ],
+  }),
+  component: Privacy,
+});
 
 function Privacy() {
   return (

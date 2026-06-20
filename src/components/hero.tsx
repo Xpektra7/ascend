@@ -15,9 +15,13 @@ export default function Hero() {
           Exploring how AI is reshaping creativity, digital products, and the
           future.
         </p>
-        <div className="flex flex-col sm:flex-row gap-4">
-          <Link to="/" hash="passes"><Button text="get tickets" variant="button" /></Link>
-          <Link to="/" hash="schedule"><Button text="view schedule" variant="secondary" /></Link>
+        <div className="flex flex-col items-center sm:flex-row gap-4">
+          <Link to="/" hash="passes">
+            <Button text="get tickets" variant="button" />
+          </Link>
+          <Link to="/" hash="schedule">
+            <Button text="view schedule" variant="secondary" />
+          </Link>
         </div>
       </div>
     </section>

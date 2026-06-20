@@ -3,6 +3,18 @@ import { ArrowLeft, Calendar, Clock, Timer } from "lucide-react";
 import { getSessionBySlug, getSessionNav } from "#/data/sessions";
 
 export const Route = createFileRoute("/session/$slug")({
+  head: ({ params }) => {
+    const session = getSessionBySlug(params.slug);
+    return {
+      meta: [
+        { title: session ? `${session.title} — Ascend 2026` : "Session — Ascend 2026" },
+        {
+          name: "description",
+          content: session ? session.description : "Session details",
+        },
+      ],
+    };
+  },
   component: SessionDetail,
   notFoundComponent: () => (
     <div className="wrapper pt-48">

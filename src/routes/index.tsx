@@ -14,7 +14,19 @@ import Schedule from "#/components/schedule";
 import Speakers from "#/components/speakers";
 import Themes from "#/components/themes";
 
-export const Route = createFileRoute("/")({ component: Home });
+export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "Ascend 2026 — AI & Design Conference in Lagos" },
+      {
+        name: "description",
+        content:
+          "A 3-day conference in Ikoyi, Lagos exploring how AI is reshaping creativity, design, and digital products.",
+      },
+    ],
+  }),
+  component: Home,
+});
 
 function Home() {
   return (
