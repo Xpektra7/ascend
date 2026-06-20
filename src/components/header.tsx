@@ -42,7 +42,8 @@ export default function Header() {
 			</div>
 
 			<div
-				className={`md:hidden fixed inset-y-0 right-0 w-full bg-backround z-40 flex flex-col items-center justify-center gap-8 transition-transform duration-300 ease-in-out ${open ? "translate-x-0" : "translate-x-full"} pt-24`}
+				aria-hidden={!open}
+				className={`md:hidden fixed inset-y-0 right-0 w-full bg-backround z-40 flex flex-col items-center justify-center gap-8 transition-all duration-300 ease-in-out ${open ? "translate-x-0 visible" : "translate-x-full invisible"}`}
 			>
 				<Link to="/" hash="overview" onClick={() => setOpen(false)}><Button text="about" /></Link>
 				<Link to="/" hash="speakers" onClick={() => setOpen(false)}><Button text="speakers" /></Link>
