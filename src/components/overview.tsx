@@ -31,7 +31,7 @@ export default function Overview() {
 					products.
 				</p>
 
-				<div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
+				<div className="grid grid-cols-1 md:grid-cols-3 gap-6">
 					<MetricCard metric="20" label="voices shaping future" />
 					<MetricCard metric="12" label="curated sessions" />
 					<MetricCard metric="3" label="days in Ikoyi, Lagos" />

@@ -21,6 +21,15 @@ body {
   --color-text: oklch(0.8 0 0);
   --font-heading: "Unbounded", sans-serif;
   --font-body: "Inter", sans-serif;
+  --animate-scroll: scroll 20s linear infinite;
+}
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 :root {
   --background: oklch(0.145 0 0);
