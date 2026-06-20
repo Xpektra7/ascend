@@ -7,7 +7,11 @@ export const Route = createFileRoute("/session/$slug")({
     const session = getSessionBySlug(params.slug);
     return {
       meta: [
-        { title: session ? `${session.title} — Ascend 2026` : "Session — Ascend 2026" },
+        {
+          title: session
+            ? `${session.title} — Ascend 2026`
+            : "Session — Ascend 2026",
+        },
         {
           name: "description",
           content: session ? session.description : "Session details",
@@ -18,7 +22,7 @@ export const Route = createFileRoute("/session/$slug")({
   component: SessionDetail,
   notFoundComponent: () => (
     <div className="wrapper pt-48">
-      <div className="container px-8 md:px-16 max-w-3xl">
+      <div className="container px-4 md:px-16 max-w-3xl">
         <h1 className="text-4xl">Session not found</h1>
         <Link
           to="/"
@@ -41,7 +45,7 @@ function SessionDetail() {
   return (
     <div className="wraper min-h-screen flex flex-col">
       <div className="container flex-1 h-[calc(100dvh-12rem)] overflow-y-scroll flex flex-col md:flex-row">
-        <div className="w-full md:w-1/2 md:self-stretch flex flex-col pt-24 px-8 md:px-16 lg:px-20 xl:px-24 border-r border-border main-content">
+        <div className="w-full md:w-1/2 md:self-stretch flex flex-col pt-24 px-4 md:px-16 lg:px-20 xl:px-24 border-r border-border main-content">
           <Link
             to="/"
             hash="schedule"
@@ -62,6 +66,9 @@ function SessionDetail() {
             <p className="text-lg text-muted-foreground mt-2 max-w-2xl leading-relaxed">
               {session.description}
             </p>
+            <div className="flex md:hidden w-full aspect-square mt-4 z-20">
+              <div className={`flex-1 ${session.imgColor}`} />
+            </div>
           </div>
 
           <div className="border-b border-border py-4">
@@ -71,7 +78,7 @@ function SessionDetail() {
           </div>
 
           <div className="border-b border-border py-4">
-            <div className="flex gap-8 text-sm">
+            <div className="flex flex-col md:flex-row gap-8 text-sm">
               <div className="flex items-center gap-2">
                 <Calendar size={14} className="text-muted-foreground" />
                 <span>
@@ -114,7 +121,7 @@ function SessionDetail() {
         </div>
       </div>
 
-      <div className="h-24 container border-t border-border flex items-center justify-between px-8 md:px-16">
+      <div className="h-24 container border-t border-border flex items-center justify-between px-4 md:px-16">
         {prev ? (
           <Link
             to="/session/$slug"

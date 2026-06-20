@@ -39,7 +39,7 @@ function SessionCard({
       to="/session/$slug"
       params={{ slug: toSlug(title) }}
       viewTransition={{ types: ["slide-up"] }}
-      className="flex group gap-8 p-8 border-b border-border hover:bg-foreground/5 items-center"
+      className="flex flex-col md:flex-row group gap-8 p-8 border-b border-border hover:bg-foreground/5 items-center"
     >
       <div className="flex flex-col justify-between flex-1 min-w-0">
         <div>
@@ -60,7 +60,7 @@ function SessionCard({
         </div>
       </div>
       <div
-        className={`size-40 ease-in-out duration-300 group-hover:mr-4 ${imgColor}`}
+        className={`w-full md:w-40 aspect-square ease-in-out duration-300 group-hover:mr-4 ${imgColor}`}
       />
     </Link>
   );

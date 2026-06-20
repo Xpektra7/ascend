@@ -54,7 +54,7 @@ function TierCard({
 export default function Pricing() {
   return (
     <section className="wrapper" id="passes">
-      <div className="container py-32 px-8 md:px-16 flex flex-col items-center text-center">
+      <div className="container py-32 px-4 md:px-16 flex flex-col items-center text-center">
         <Pill text="PASSES" />
         <h2 className="text-4xl md:text-6xl mt-6 mb-6">
           Choose your experience.

@@ -4,7 +4,7 @@ import Button from "./button";
 export default function Hero() {
   return (
     <section className="wrapper relative overflow-hidden">
-      <div className="container relative h-[calc(100vh-6rem)] flex flex-col text-foreground! items-center justify-center gap-8 px-8 md:px-16">
+      <div className="container relative h-[calc(100vh-6rem)] flex flex-col text-foreground! items-center justify-center gap-8 px-4 md:px-16">
         <div className="absolute inset-0 bg-[url('/hero-bg.webp')] bg-center bg-cover -z-1" />
         <div className="absolute inset-0 bg-backround/70 -z-1" />
         <p className="text-base text-foreground! md:text-xl">

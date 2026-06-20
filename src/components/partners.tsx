@@ -9,7 +9,7 @@ const brandList = [
 export default function Partners() {
   return (
     <section className="wrapper">
-      <div className="container py-32 flex flex-col items-center text-center px-8 md:px-16">
+      <div className="container py-32 flex flex-col items-center text-center px-4 md:px-16">
         <Pill text="PARTNERS" />
         <h2 className="text-4xl md:text-6xl mt-6 mb-6">Trusted by the best.</h2>
         <p className="max-w-2xl text-base md:text-xl mb-20">
