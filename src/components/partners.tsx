@@ -2,8 +2,8 @@ import { brands } from "#/data/brands";
 import Pill from "./pill";
 
 const brandList = [
-  ...brands.map((b, i) => ({ name: b, id: `a-${i}` })),
-  ...brands.map((b, i) => ({ name: b, id: `b-${i}` })),
+  ...brands.map((b, i) => ({ ...b, id: `a-${i}` })),
+  ...brands.map((b, i) => ({ ...b, id: `b-${i}` })),
 ];
 
 export default function Partners() {
@@ -23,9 +23,13 @@ export default function Partners() {
                 key={brand.id}
                 className="group size-28 border border-border hover:border-foreground flex items-center justify-center shrink-0 transition-colors duration-300"
               >
-                <span className="text-xs text-text group-hover:text-foreground transition-colors duration-300 tracking-wider uppercase font-heading">
-                  {brand.name}
-                </span>
+                {brand.image ? (
+                  <img src={brand.image} alt={brand.name} className="w-14 h-14 object-contain opacity-60 group-hover:opacity-100 transition-opacity duration-300" />
+                ) : (
+                  <span className="text-xs text-text group-hover:text-foreground transition-colors duration-300 tracking-wider uppercase font-heading">
+                    {brand.name}
+                  </span>
+                )}
               </div>
             ))}
           </div>

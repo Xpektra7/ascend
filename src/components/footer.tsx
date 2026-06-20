@@ -82,6 +82,7 @@ export default function Footer() {
             className="w-6 h-6 rounded-full bg-zinc-600  block"
           >
             <span className="sr-only">Xpektra</span>
+            <img src="./images/xpektra.jpg" alt="xpektra" />
           </a>
           <span>
             Made by{" "}
