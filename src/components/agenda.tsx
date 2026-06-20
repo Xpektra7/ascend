@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { days } from "#/data/days";
+import { speakers } from "#/data/speakers";
 
 function toSlug(title: string): string {
   return title
@@ -8,10 +9,18 @@ function toSlug(title: string): string {
     .replace(/^-|-$/g, "");
 }
 
-function SpeakerPill({ name, color }: { name: string; color: string }) {
+const speakerImageMap = Object.fromEntries(
+  speakers.map((s) => [s.name, s.image])
+);
+
+function SpeakerPill({ name }: { name: string }) {
   return (
     <div className="flex items-center gap-2">
-      <div className={`w-8 h-8 ${color}`} />
+      <img
+        src={speakerImageMap[name]}
+        alt={name}
+        className="w-8 h-8 object-cover"
+      />
       <span className="text-sm">{name}</span>
     </div>
   );
@@ -24,15 +33,15 @@ function SessionCard({
   title,
   description,
   speakers,
-  imgColor,
+  image,
 }: {
   type: string;
   time: string;
   duration: string;
   title: string;
   description: string;
-  speakers: { name: string; color: string }[];
-  imgColor: string;
+  speakers: { name: string }[];
+  image: string;
 }) {
   return (
     <Link
@@ -55,12 +64,14 @@ function SessionCard({
         </div>
         <div className="flex flex-wrap gap-4 mt-6">
           {speakers.map((s) => (
-            <SpeakerPill key={s.name} name={s.name} color={s.color} />
+            <SpeakerPill key={s.name} name={s.name} />
           ))}
         </div>
       </div>
-      <div
-        className={`w-full md:w-40 aspect-square ease-in-out duration-300 group-hover:mr-4 ${imgColor}`}
+      <img
+        src={image}
+        alt={title}
+        className="w-full md:w-40 aspect-square  object-cover ease-in-out duration-300 group-hover:mr-4"
       />
     </Link>
   );
@@ -83,8 +94,8 @@ function DayBlock({
     duration: string;
     title: string;
     description: string;
-    speakers: { name: string; color: string }[];
-    imgColor: string;
+    speakers: { name: string }[];
+    image: string;
   }[];
 }) {
   return (

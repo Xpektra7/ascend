@@ -5,7 +5,7 @@ export interface Session {
 	title: string;
 	description: string;
 	speakers: { name: string; color: string }[];
-	imgColor: string;
+	image: string;
 }
 
 export interface Day {
@@ -16,6 +16,7 @@ export interface Day {
 	themeTitle: string;
 	themeDescription: string;
 	color: string;
+	themeImage: string;
 	sessions: Session[];
 }
 
@@ -30,6 +31,7 @@ export const days: Day[] = [
 		themeDescription:
 			"Exploring how artificial intelligence is reshaping design workflows, creative expression, and the role of the modern designer.",
 		color: "bg-zinc-800",
+		themeImage: "/images/themes/ai-creativity.webp",
 		sessions: [
 			{
 				type: "Keynote",
@@ -38,7 +40,7 @@ export const days: Day[] = [
 				title: "The Intelligence of Design",
 				description: "AI reshaping the creative process",
 				speakers: [{ name: "Yuki Tanaka", color: "bg-zinc-600" }],
-				imgColor: "bg-zinc-700",
+				image: "/images/sessions/ai-creativity.webp",
 			},
 			{
 				type: "Workshop",
@@ -50,7 +52,7 @@ export const days: Day[] = [
 					{ name: "Marcus Chen", color: "bg-zinc-600" },
 					{ name: "Hana Kim", color: "bg-zinc-600" },
 				],
-				imgColor: "bg-zinc-700",
+				image: "/images/sessions/prototyping-ai.webp",
 			},
 			{
 				type: "Panel",
@@ -63,7 +65,7 @@ export const days: Day[] = [
 					{ name: "Priya Patel", color: "bg-zinc-600" },
 					{ name: "Elena Voss", color: "bg-zinc-600" },
 				],
-				imgColor: "bg-zinc-700",
+				image: "/images/sessions/creativity-loop.webp",
 			},
 		],
 	},
@@ -77,6 +79,7 @@ export const days: Day[] = [
 		themeDescription:
 			"Scalable design systems, product strategy, and building for longevity in a rapidly shifting technological landscape.",
 		color: "bg-zinc-700",
+		themeImage: "/images/themes/product-systems.webp",
 		sessions: [
 			{
 				type: "Keynote",
@@ -85,7 +88,7 @@ export const days: Day[] = [
 				title: "Building at Scale",
 				description: "Shipping design systems at scale",
 				speakers: [{ name: "James Adeyemi", color: "bg-zinc-600" }],
-				imgColor: "bg-zinc-800",
+				image: "/images/sessions/building-scale.webp",
 			},
 			{
 				type: "Workshop",
@@ -97,7 +100,7 @@ export const days: Day[] = [
 					{ name: "Hana Kim", color: "bg-zinc-600" },
 					{ name: "Ryo Nakamura", color: "bg-zinc-600" },
 				],
-				imgColor: "bg-zinc-800",
+				image: "/images/sessions/design-systems.webp",
 			},
 			{
 				type: "Fireside Chat",
@@ -109,7 +112,7 @@ export const days: Day[] = [
 					{ name: "Yuki Tanaka", color: "bg-zinc-600" },
 					{ name: "Marcus Chen", color: "bg-zinc-600" },
 				],
-				imgColor: "bg-zinc-800",
+				image: "/images/sessions/product-design.webp",
 			},
 		],
 	},
@@ -123,6 +126,7 @@ export const days: Day[] = [
 		themeDescription:
 			"Emerging tools, hands-on workshops, and the evolving relationship between maker, material, and machine.",
 		color: "bg-zinc-600",
+		themeImage: "/images/themes/future-craft.webp",
 		sessions: [
 			{
 				type: "Keynote",
@@ -131,7 +135,7 @@ export const days: Day[] = [
 				title: "The Hand and the Machine",
 				description: "Craftsmanship meets modern technology",
 				speakers: [{ name: "Priya Patel", color: "bg-zinc-600" }],
-				imgColor: "bg-zinc-800",
+				image: "/images/sessions/hand-machine.webp",
 			},
 			{
 				type: "Workshop",
@@ -143,7 +147,7 @@ export const days: Day[] = [
 					{ name: "Elena Voss", color: "bg-zinc-600" },
 					{ name: "Ryo Nakamura", color: "bg-zinc-600" },
 				],
-				imgColor: "bg-zinc-800",
+				image: "/images/sessions/emerging-tools.webp",
 			},
 			{
 				type: "Closing Panel",
@@ -157,7 +161,7 @@ export const days: Day[] = [
 					{ name: "James Adeyemi", color: "bg-zinc-600" },
 					{ name: "Priya Patel", color: "bg-zinc-600" },
 				],
-				imgColor: "bg-zinc-800",
+				image: "/images/sessions/where-we-go.webp",
 			},
 		],
 	},

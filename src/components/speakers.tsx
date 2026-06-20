@@ -5,16 +5,16 @@ function SpeakerCard({
 	name,
 	title,
 	company,
-	color,
+	image,
 }: {
 	name: string;
 	title: string;
 	company: string;
-	color: string;
+	image: string;
 }) {
 	return (
 		<div className="border border-border flex flex-col text-left">
-			<div className={`aspect-square w-full ${color}`} />
+			<img src={image} alt={name} className="aspect-square w-full object-cover" />
 			<div className="p-6 flex flex-col gap-1">
 				<h3 className="text-lg">{name}</h3>
 				<p className="text-sm text-muted-foreground">

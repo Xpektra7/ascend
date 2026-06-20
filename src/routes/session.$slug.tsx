@@ -66,8 +66,12 @@ function SessionDetail() {
             <p className="text-lg text-muted-foreground mt-2 max-w-2xl leading-relaxed">
               {session.description}
             </p>
-            <div className="flex md:hidden w-full aspect-square mt-4 z-20">
-              <div className={`flex-1 ${session.imgColor}`} />
+            <div className="flex md:hidden w-full aspect-square mt-4 z-20 overflow-hidden">
+              <img
+                src={session.image}
+                alt={session.title}
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
 
@@ -103,7 +107,11 @@ function SessionDetail() {
             <div className="flex flex-row flex-wrap gap-6">
               {session.speakers.map((speaker) => (
                 <div key={speaker.name} className="flex items-center gap-4">
-                  <div className={`size-12 shrink-0 ${speaker.color}`} />
+                  <img
+                    src={speaker.image}
+                    alt={speaker.name}
+                    className="size-12 object-cover shrink-0"
+                  />
                   <div>
                     <p className="text-sm">{speaker.name}</p>
                     <p className="text-xs text-muted-foreground">
@@ -117,7 +125,13 @@ function SessionDetail() {
         </div>
 
         <div className="hidden md:flex md:w-1/2 md:self-stretch z-20">
-          <div className={`flex-1 ${session.imgColor}`} />
+          <div className="flex-1 overflow-hidden">
+            <img
+              src={session.image}
+              alt={session.title}
+              className="w-full h-full object-cover"
+            />
+          </div>
         </div>
       </div>
 

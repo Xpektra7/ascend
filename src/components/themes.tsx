@@ -5,16 +5,16 @@ function ThemeCard({
 	index,
 	title,
 	description,
-	color,
+	image,
 }: {
 	index: string;
 	title: string;
 	description: string;
-	color: string;
+	image: string;
 }) {
 	return (
 		<div className=" flex flex-col text-left">
-			<div className={`aspect-square w-full ${color}`} />
+			<img src={image} alt={title} className="aspect-square w-full object-cover" />
 			<div className="p-8 flex flex-col gap-3">
 				<span className="text-sm">{index}</span>
 				<h3 className="text-2xl">{title}</h3>
@@ -36,7 +36,7 @@ export default function Themes() {
 							index={day.themeIndex}
 							title={day.themeTitle}
 							description={day.themeDescription}
-							color={day.color}
+							image={day.themeImage}
 						/>
 					))}
 				</div>

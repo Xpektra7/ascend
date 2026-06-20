@@ -8,8 +8,8 @@ export interface SessionDetail {
   title: string;
   description: string;
   body: string;
-  speakers: { name: string; title: string; company: string; color: string }[];
-  imgColor: string;
+  speakers: { name: string; title: string; company: string; image: string }[];
+  image: string;
   dayNumber: string;
   date: string;
 }
@@ -50,15 +50,15 @@ function toSlug(title: string): string {
     .replace(/^-|-$/g, "");
 }
 
-const speakerLookup: Record<string, { title: string; company: string }> = {
-  "Yuki Tanaka": { title: "Design Director", company: "Google" },
-  "Aisha Okafor": { title: "Principal Engineer", company: "OpenAI" },
-  "Marcus Chen": { title: "Product Lead", company: "Figma" },
-  "Priya Patel": { title: "Creative Technologist", company: "Apple" },
-  "Elena Voss": { title: "AI Researcher", company: "DeepMind" },
-  "James Adeyemi": { title: "UX Director", company: "Spotify" },
-  "Hana Kim": { title: "Founder & CEO", company: "Layer" },
-  "Ryo Nakamura": { title: "Head of Design", company: "Sony" },
+const speakerLookup: Record<string, { title: string; company: string; image: string }> = {
+  "Yuki Tanaka": { title: "Design Director", company: "Google", image: "/images/speakers/yuki.webp" },
+  "Aisha Okafor": { title: "Principal Engineer", company: "OpenAI", image: "/images/speakers/aisha.webp" },
+  "Marcus Chen": { title: "Product Lead", company: "Figma", image: "/images/speakers/marcus.webp" },
+  "Priya Patel": { title: "Creative Technologist", company: "Apple", image: "/images/speakers/priya.webp" },
+  "Elena Voss": { title: "AI Researcher", company: "DeepMind", image: "/images/speakers/elena.webp" },
+  "James Adeyemi": { title: "UX Director", company: "Spotify", image: "/images/speakers/james.webp" },
+  "Hana Kim": { title: "Founder & CEO", company: "Layer", image: "/images/speakers/hana.webp" },
+  "Ryo Nakamura": { title: "Head of Design", company: "Sony", image: "/images/speakers/ryo.webp" },
 };
 
 export function getAllSessions(): SessionDetail[] {
@@ -76,9 +76,8 @@ export function getAllSessions(): SessionDetail[] {
         speakers: session.speakers.map((s) => ({
           name: s.name,
           ...speakerLookup[s.name],
-          color: s.color,
         })),
-        imgColor: session.imgColor,
+        image: session.image,
         dayNumber: day.dayNumber,
         date: day.date,
       });
