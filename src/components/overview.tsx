@@ -19,7 +19,7 @@ export function MetricCard({
 
 export default function Overview() {
 	return (
-		<section className="wrapper">
+		<section className="wrapper" id="overview">
 			<div className="container py-32 px-8 md:px-32 flex flex-col items-center text-center gap-4">
 				<Pill text="OVERVIEW" />
 

@@ -1,3 +1,4 @@
+import { Link } from "@tanstack/react-router";
 import Button from "./button";
 
 export default function Hero() {
@@ -15,8 +16,8 @@ export default function Hero() {
           future.
         </p>
         <div className="flex flex-col sm:flex-row gap-4">
-          <Button text="get tickets" variant="button" />
-          <Button text="view schedule" variant="secondary" />
+          <Link to="/" hash="passes"><Button text="get tickets" variant="button" /></Link>
+          <Link to="/" hash="schedule"><Button text="view schedule" variant="secondary" /></Link>
         </div>
       </div>
     </section>

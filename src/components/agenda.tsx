@@ -1,4 +1,12 @@
+import { Link } from "@tanstack/react-router";
 import { days } from "#/data/days";
+
+function toSlug(title: string): string {
+  return title
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
+}
 
 function SpeakerPill({ name, color }: { name: string; color: string }) {
   return (
@@ -11,6 +19,7 @@ function SpeakerPill({ name, color }: { name: string; color: string }) {
 
 function SessionCard({
   type,
+  time,
   duration,
   title,
   description,
@@ -18,6 +27,7 @@ function SessionCard({
   imgColor,
 }: {
   type: string;
+  time: string;
   duration: string;
   title: string;
   description: string;
@@ -25,10 +35,17 @@ function SessionCard({
   imgColor: string;
 }) {
   return (
-    <div className="flex group gap-8 p-8 border-b border-border hover:bg-foreground/5 items-center">
+    <Link
+      to="/session/$slug"
+      params={{ slug: toSlug(title) }}
+      viewTransition={{ types: ["slide-up"] }}
+      className="flex group gap-8 p-8 border-b border-border hover:bg-foreground/5 items-center"
+    >
       <div className="flex flex-col justify-between flex-1 min-w-0">
         <div>
           <span className="text-xs uppercase tracking-wider">
+            {time}
+            <span className="mx-2 text-foreground/30">|</span>
             {type}
             <span className="mx-2 text-foreground/30">|</span>
             {duration}
@@ -45,7 +62,7 @@ function SessionCard({
       <div
         className={`size-40 ease-in-out duration-300 group-hover:mr-4 ${imgColor}`}
       />
-    </div>
+    </Link>
   );
 }
 
@@ -62,6 +79,7 @@ function DayBlock({
   description: string;
   sessions: {
     type: string;
+    time: string;
     duration: string;
     title: string;
     description: string;

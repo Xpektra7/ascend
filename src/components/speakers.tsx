@@ -27,7 +27,7 @@ function SpeakerCard({
 
 export default function Speakers() {
 	return (
-		<section className="wrapper">
+		<section className="wrapper" id="speakers">
 			<div className="container py-32 flex flex-col items-center text-center gap-4">
 				<Pill text="SPEAKERS" />
 				<h2 className="text-5xl md:text-6xl">Meet the lineup.</h2>

@@ -5,10 +5,12 @@ function RouteCard({
   method,
   description,
   action,
+  url,
 }: {
   method: string;
   description: string;
   action: string;
+  url: string;
 }) {
   return (
     <div className="border border-border p-8 flex flex-col gap-4">
@@ -17,12 +19,14 @@ function RouteCard({
         {description}
       </p>
       <div className="mt-auto">
-        <button
-          type="button"
-          className="w-full font-heading px-8 py-4 cursor-pointer bg-transparent text-foreground! border border-border hover:bg-foreground/5 transition-colors duration-300 ease-in-out uppercase text-sm"
+        <a
+          href={url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block w-full font-heading px-8 py-4 text-center cursor-pointer bg-transparent text-foreground! border border-border hover:bg-foreground/5 transition-colors duration-300 ease-in-out uppercase text-sm"
         >
           {action}
-        </button>
+        </a>
       </div>
     </div>
   );
@@ -30,7 +34,7 @@ function RouteCard({
 
 export default function Location() {
   return (
-    <section className="wrapper">
+    <section className="wrapper" id="location">
       <div className="container py-32 flex flex-col items-center text-center px-8 md:px-32">
         <Pill text="LOCATION" />
         <h2 className="text-4xl md:text-6xl mt-6 mb-6">

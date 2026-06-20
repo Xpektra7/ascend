@@ -38,12 +38,14 @@ function TierCard({
         ))}
       </div>
       <div className="mt-auto pt-10">
-        <button
-          type="button"
-          className="w-full font-heading px-8 py-4 cursor-pointer bg-transparent text-foreground! border border-border hover:bg-foreground/5 transition-colors duration-300 ease-in-out uppercase"
+        <a
+          href="https://luma.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block w-full font-heading px-8 py-4 text-center cursor-pointer bg-transparent text-foreground! border border-border hover:bg-foreground/5 transition-colors duration-300 ease-in-out uppercase"
         >
           get tickets
-        </button>
+        </a>
       </div>
     </div>
   );
@@ -51,7 +53,7 @@ function TierCard({
 
 export default function Pricing() {
   return (
-    <section className="wrapper">
+    <section className="wrapper" id="passes">
       <div className="container py-32 px-8 md:px-16 flex flex-col items-center text-center">
         <Pill text="PASSES" />
         <h2 className="text-4xl md:text-6xl mt-6 mb-6">

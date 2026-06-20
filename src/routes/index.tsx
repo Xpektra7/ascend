@@ -17,22 +17,22 @@ import Themes from "#/components/themes";
 export const Route = createFileRoute("/")({ component: Home });
 
 function Home() {
-	return (
-		<div className="">
-			<Header />
-			<Hero />
-			<Details />
-			<Overview />
-			<Themes />
-			<Speakers />
-			<Schedule />
-			<Agenda />
-			<Partners />
-			<Pricing />
-			<Location />
-			<Faq />
-			<Cta />
-			<Footer />
-		</div>
-	);
+  return (
+    <div className="main-content">
+      <Header />
+      <Hero />
+      <Details />
+      <Overview />
+      <Themes />
+      <Speakers />
+      <Schedule />
+      <Agenda />
+      <Partners />
+      <Pricing />
+      <Location />
+      <Faq />
+      <Cta />
+      <Footer />
+    </div>
+  );
 }

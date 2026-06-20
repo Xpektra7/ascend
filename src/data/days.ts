@@ -1,5 +1,6 @@
 export interface Session {
 	type: string;
+	time: string;
 	duration: string;
 	title: string;
 	description: string;
@@ -32,6 +33,7 @@ export const days: Day[] = [
 		sessions: [
 			{
 				type: "Keynote",
+				time: "10:00 AM",
 				duration: "45 min",
 				title: "The Intelligence of Design",
 				description: "AI reshaping the creative process",
@@ -40,6 +42,7 @@ export const days: Day[] = [
 			},
 			{
 				type: "Workshop",
+				time: "11:30 AM",
 				duration: "90 min",
 				title: "Prototyping with AI",
 				description: "Rapid prototyping with AI tools",
@@ -51,6 +54,7 @@ export const days: Day[] = [
 			},
 			{
 				type: "Panel",
+				time: "2:00 PM",
 				duration: "60 min",
 				title: "Creativity in the Loop",
 				description: "Human creativity meets machine intelligence",
@@ -76,6 +80,7 @@ export const days: Day[] = [
 		sessions: [
 			{
 				type: "Keynote",
+				time: "10:00 AM",
 				duration: "45 min",
 				title: "Building at Scale",
 				description: "Shipping design systems at scale",
@@ -84,6 +89,7 @@ export const days: Day[] = [
 			},
 			{
 				type: "Workshop",
+				time: "11:30 AM",
 				duration: "90 min",
 				title: "Design Systems Deep Dive",
 				description: "Architecting complex design systems",
@@ -95,6 +101,7 @@ export const days: Day[] = [
 			},
 			{
 				type: "Fireside Chat",
+				time: "2:00 PM",
 				duration: "45 min",
 				title: "Product x Design",
 				description: "Bridging product strategy and design",
@@ -119,6 +126,7 @@ export const days: Day[] = [
 		sessions: [
 			{
 				type: "Keynote",
+				time: "10:00 AM",
 				duration: "45 min",
 				title: "The Hand and the Machine",
 				description: "Craftsmanship meets modern technology",
@@ -127,6 +135,7 @@ export const days: Day[] = [
 			},
 			{
 				type: "Workshop",
+				time: "11:30 AM",
 				duration: "90 min",
 				title: "Emerging Tools Lab",
 				description: "Hands-on with creative tools",
@@ -138,6 +147,7 @@ export const days: Day[] = [
 			},
 			{
 				type: "Closing Panel",
+				time: "2:00 PM",
 				duration: "60 min",
 				title: "Where We Go From Here",
 				description: "Reflecting on conference key themes",

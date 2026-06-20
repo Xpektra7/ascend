@@ -2,7 +2,7 @@ import Pill from "./pill";
 
 export default function Schedule() {
 	return (
-		<section className="wrapper">
+		<section className="wrapper" id="schedule">
 			<div className="container py-32 flex flex-col items-center text-center px-8 md:px-16">
 				<Pill text="SCHEDULE" />
 				<h2 className="text-4xl md:text-6xl mt-6 mb-6">What you can expect</h2>

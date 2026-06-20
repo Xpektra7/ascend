@@ -1,3 +1,4 @@
+import { Link } from "@tanstack/react-router";
 import Button from "./button";
 
 export default function Cta() {
@@ -11,7 +12,7 @@ export default function Cta() {
           Three days of talks, panels, and conversations exploring where design
           and technology go next.
         </p>
-        <Button text="get tickets" variant="secondary" />
+        <Link to="/" hash="passes"><Button text="get tickets" variant="secondary" /></Link>
       </div>
     </section>
   );
